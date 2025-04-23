@@ -19,6 +19,7 @@ const book = {
   pages: 464
 };
 
+<<<<<<< HEAD
 type Book = {
     title: string;
     author: Author;
@@ -33,6 +34,8 @@ type Author = {
     birthYear: number;
 };  
 
+=======
+>>>>>>> cb1f771 (First commit)
 // 👤 Exemple d'utilisateur à typer
 const borrower = {
   id: 123,
@@ -42,6 +45,7 @@ const borrower = {
   lastBorrowed: new Date("2024-03-10")
 };
 
+<<<<<<< HEAD
 type Borrower = {
     id: number;
     fullName: string;
@@ -50,35 +54,56 @@ type Borrower = {
     lastBorrowed: Date;
 };
 
+=======
+>>>>>>> cb1f771 (First commit)
 // 🧠 À toi de compléter les types ci-dessous :
 
 // ✅ Paramètre : book (objet représentant un livre)
 // ✅ Retour : string
 function getBookTitle(book: Book): string {
+<<<<<<< HEAD
   return book.title;
+=======
+    return book.title;
+>>>>>>> cb1f771 (First commit)
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : number
+<<<<<<< HEAD
 function getPageCount(book: Book): number {
+=======
+function getPageCount(book) {
+>>>>>>> cb1f771 (First commit)
   return book.pages;
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : boolean
+<<<<<<< HEAD
 function isAvailable(book: Book): boolean {
+=======
+function isAvailable(book) {
+>>>>>>> cb1f771 (First commit)
   return book.isAvailable;
 }
 
 // ✅ Paramètre : author (objet avec name et birthYear)
 // ✅ Retour : boolean
+<<<<<<< HEAD
 function isAuthorAlive(author: Author): boolean {
     const currentYear = new Date().getFullYear();
     return currentYear - author.birthYear < 100;
+=======
+function isAuthorAlive(author) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - author.birthYear < 100;
+>>>>>>> cb1f771 (First commit)
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : string[]
+<<<<<<< HEAD
 function listTags(book: Book): string[] {
     return book.tags;
 }
@@ -87,11 +112,25 @@ function listTags(book: Book): string[] {
 // ✅ Retour : string
 function getBorrowerName(borrower: Borrower): string {
     return borrower.fullName;
+=======
+function listTags(book) {
+  return book.tags;
+}
+
+// ✅ Paramètre : borrower
+// ✅ Retour : string
+function getBorrowerName(borrower) {
+  return borrower.fullName;
+>>>>>>> cb1f771 (First commit)
 }
 
 // ✅ Paramètre : borrower
 // ✅ Retour : boolean
+<<<<<<< HEAD
 function hasBorrowedBooks(borrower: Borrower) {
+=======
+function hasBorrowedBooks(borrower) {
+>>>>>>> cb1f771 (First commit)
   return borrower.borrowedBooks.length > 0;
 }
 
