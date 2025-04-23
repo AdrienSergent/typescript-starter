@@ -94,6 +94,7 @@ function getBorrowerSummary(borrower) {
 function getBorrowedTitles(borrower) {
   return borrower.borrowedBooks.map(book => book.title);
 }
+```
 
 # 🧩 Exercice 2 – Crée les types/interfaces
 // 👉 Résultat attendu : le code compile si tu crées bien les types User, Role, Profile
