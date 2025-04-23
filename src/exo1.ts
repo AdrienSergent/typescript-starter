@@ -1,7 +1,11 @@
 // 📘 Exemple de livre à typer
+type Author = {
+	name: string;
+	birthYear: number;
+};
 type Book = {
 	title: string;
-	author: { name: string; birthYear: number };
+	author: Author;
 	isAvailable: boolean;
 	tags: string[];
 	rating: number;
@@ -57,7 +61,7 @@ function isAvailable(book: Book): boolean {
 
 // ✅ Paramètre : author (objet avec name et birthYear)
 // ✅ Retour : boolean
-function isAuthorAlive(author: Book["author"]): boolean {
+function isAuthorAlive(author: Author): boolean {
 	const currentYear = new Date().getFullYear();
 	return currentYear - author.birthYear < 100;
 }
