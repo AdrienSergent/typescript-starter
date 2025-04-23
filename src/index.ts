@@ -19,6 +19,20 @@ const book = {
   pages: 464
 };
 
+type Book = {
+    title: string;
+    author: Author;
+    isAvailable: boolean;
+    tags: string[];
+    rating: number;
+    pages: number;
+};
+
+type Author = {
+    name: string;
+    birthYear: number;
+};  
+
 // 👤 Exemple d'utilisateur à typer
 const borrower = {
   id: 123,
@@ -28,48 +42,56 @@ const borrower = {
   lastBorrowed: new Date("2024-03-10")
 };
 
+type Borrower = {
+    id: number;
+    fullName: string;
+    active: boolean;
+    borrowedBooks: Book[];
+    lastBorrowed: Date;
+};
+
 // 🧠 À toi de compléter les types ci-dessous :
 
 // ✅ Paramètre : book (objet représentant un livre)
 // ✅ Retour : string
 function getBookTitle(book: Book): string {
-    return book.title;
+  return book.title;
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : number
-function getPageCount(book) {
+function getPageCount(book: Book): number {
   return book.pages;
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : boolean
-function isAvailable(book) {
+function isAvailable(book: Book): boolean {
   return book.isAvailable;
 }
 
 // ✅ Paramètre : author (objet avec name et birthYear)
 // ✅ Retour : boolean
-function isAuthorAlive(author) {
-  const currentYear = new Date().getFullYear();
-  return currentYear - author.birthYear < 100;
+function isAuthorAlive(author: Author): boolean {
+    const currentYear = new Date().getFullYear();
+    return currentYear - author.birthYear < 100;
 }
 
 // ✅ Paramètre : book
 // ✅ Retour : string[]
-function listTags(book) {
-  return book.tags;
+function listTags(book: Book): string[] {
+    return book.tags;
 }
-
+ 
 // ✅ Paramètre : borrower
 // ✅ Retour : string
-function getBorrowerName(borrower) {
-  return borrower.fullName;
+function getBorrowerName(borrower: Borrower): string {
+    return borrower.fullName;
 }
 
 // ✅ Paramètre : borrower
 // ✅ Retour : boolean
-function hasBorrowedBooks(borrower) {
+function hasBorrowedBooks(borrower: Borrower) {
   return borrower.borrowedBooks.length > 0;
 }
 
