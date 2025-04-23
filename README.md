@@ -97,6 +97,8 @@ function getBorrowedTitles(borrower) {
 ```
 
 # 🧩 Exercice 2 – Crée les types/interfaces
+
+```ts
 // 👉 Résultat attendu : le code compile si tu crées bien les types User, Role, Profile
 
 const user1: User = {
@@ -124,6 +126,8 @@ function printUserRole(user: User) {
 function hasProfile(user: User) {
   return "profile" in user;
 }
+```
+
 🎯 Consignes générales
 Ton objectif est de faire en sorte que TypeScript accepte tout le code sans erreur.
 Les erreurs doivent disparaître uniquement grâce à tes définitions de types et interfaces. 
