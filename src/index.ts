@@ -1,10 +1,11 @@
+/*
 # ✍️ Exercice TypeScript – Typage & Interfaces
 
 ## 🧩 Exercice 1 – Typage à compléter
 
 > 🎯 Objectif : Complète les types manquants pour que **tout compile sans erreur**.  
 > tu dois juste **ajouter les types corrects** aux fonctions et aux objets.
-
+*/
 
 // 📘 Exemple de livre à typer
 const book = {
@@ -127,7 +128,7 @@ function getBorrowerName(borrower) {
 // ✅ Paramètre : borrower
 // ✅ Retour : boolean
 <<<<<<< HEAD
-function hasBorrowedBooks(borrower: Borrower) {
+function hasBorrowedBooks(borrower: Borrower): boolean {
 =======
 function hasBorrowedBooks(borrower) {
 >>>>>>> cb1f771 (First commit)
@@ -136,14 +137,14 @@ function hasBorrowedBooks(borrower) {
 
 // ✅ Paramètre : borrower
 // ✅ Retour : Date
-function getLastBorrowedDate(borrower) {
+function getLastBorrowedDate(borrower: Borrower): Date {
   return borrower.lastBorrowed;
 }
 
 // ✅ Paramètre : borrower
 // ✅ Retour : objet contenant id et nombre de livres
 // ✅ Exemple attendu : { id: 123, totalBooks: 1 }
-function getBorrowerSummary(borrower) {
+function getBorrowerSummary(borrower: Borrower): { id: number; totalBooks: number } {
   return {
     id: borrower.id,
     totalBooks: borrower.borrowedBooks.length
@@ -152,15 +153,27 @@ function getBorrowerSummary(borrower) {
 
 // ✅ Paramètre : borrower
 // ✅ Retour : tableau des titres de ses livres (string[])
-function getBorrowedTitles(borrower) {
+function getBorrowedTitles(borrower: Borrower): string[] {
   return borrower.borrowedBooks.map(book => book.title);
 }
-```
 
+/*
 # 🧩 Exercice 2 – Crée les types/interfaces
+*/
 
-```ts
 // 👉 Résultat attendu : le code compile si tu crées bien les types 
+
+type Profile = {
+  bio: string;
+  website: string;
+};
+
+type User = {
+  id: number;
+  username: string;
+  role: string;
+  profile?: Profile;
+};
 
 const user1: User = {
   id: 1,
@@ -187,8 +200,9 @@ function printUserRole(user: User) {
 function hasProfile(user: User) {
   return "profile" in user;
 }
-```
 
+/*
 🎯 Consignes générales
 Ton objectif est de faire en sorte que TypeScript accepte tout le code sans erreur.
 Les erreurs doivent disparaître uniquement grâce à tes définitions de types et interfaces. 
+*/
