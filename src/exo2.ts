@@ -31,8 +31,9 @@ function printUserRole(user: User): void {
 }
 
 // ✅ Fonction : retourne true si l'utilisateur a un profil
-function hasProfile(user: User): any {
+function hasProfile(user: User): boolean {
 	if ("profile" in user) {
 		return true;
 	}
+	return false;
 }
