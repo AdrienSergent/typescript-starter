@@ -1,9 +1,13 @@
 // 👉 Résultat attendu : le code compile si tu crées bien les types
+type Profile = {
+	bio: string;
+	website: string;
+};
 type User = {
 	id: number;
 	username: string;
 	role: "user" | "admin";
-	profile?: { bio: string; website: string };
+	profile?: Profile;
 };
 const user1: User = {
 	id: 1,
@@ -29,7 +33,6 @@ function printUserRole(user: User): void {
 // ✅ Fonction : retourne true si l'utilisateur a un profil
 function hasProfile(user: User): any {
 	if ("profile" in user) {
-		 return true;
-    }
-    
+		return true;
+	}
 }
