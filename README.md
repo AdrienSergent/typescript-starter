@@ -3,7 +3,7 @@
 ## 🧩 Exercice 1 – Typage à compléter
 
 > 🎯 Objectif : Complète les types manquants pour que **tout compile sans erreur**.  
-> Tu ne modifies **aucune ligne de code**, tu dois juste **ajouter les types corrects** aux fonctions et aux objets.
+> tu dois juste **ajouter les types corrects** aux fonctions et aux objets.
 
 ```ts
 // 📘 Exemple de livre à typer
@@ -96,11 +96,6 @@ function getBorrowedTitles(borrower) {
 }
 
 # 🧩 Exercice 2 – Crée les types/interfaces
-## 🎯 Objectif : Ne modifie aucune ligne de code ci-dessous.
-
-ts
-Copier
-Modifier
 // 👉 Résultat attendu : le code compile si tu crées bien les types User, Role, Profile
 
 const user1: User = {
@@ -130,7 +125,4 @@ function hasProfile(user: User) {
 }
 🎯 Consignes générales
 Ton objectif est de faire en sorte que TypeScript accepte tout le code sans erreur.
-
-Tu ne modifies aucun des objets ni des fonctions existantes.
-
-Les erreurs doivent disparaître uniquement grâce à tes définitions de types et interfaces.
+Les erreurs doivent disparaître uniquement grâce à tes définitions de types et interfaces. 
