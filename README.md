@@ -99,7 +99,7 @@ function getBorrowedTitles(borrower) {
 # 🧩 Exercice 2 – Crée les types/interfaces
 
 ```ts
-// 👉 Résultat attendu : le code compile si tu crées bien les types User, Role, Profile
+// 👉 Résultat attendu : le code compile si tu crées bien les types 
 
 const user1: User = {
   id: 1,
