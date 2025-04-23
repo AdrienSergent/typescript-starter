@@ -1,133 +1,33 @@
-# ✍️ Exercice TypeScript – Typage & Interfaces
+# Exercice TypeScript – Typage & Interfaces
 
-## 🧩 Exercice 1 – Typage à compléter
+Ce brief propose deux exercices en TypeScript pour renforcer la maîtrise des **types**, **interfaces** et **annotations**.  
 
-> 🎯 Objectif : Complète les types manquants pour que **tout compile sans erreur**.  
-> tu dois juste **ajouter les types corrects** aux fonctions et aux objets.
+- La **gestion du typage statique** avec TypeScript
+- L’**annotation de fonctions** et d’objets existants
+- La **création de types personnalisés** (`type` & `interface`)
 
-```ts
-// 📘 Exemple de livre à typer
-const book = {
-  title: "Clean Code",
-  author: {
-    name: "Robert C. Martin",
-    birthYear: 1952
-  },
-  isAvailable: true,
-  tags: ["clean-code", "software", "best-practice"],
-  rating: 4.7,
-  pages: 464
-};
+Projet développé par [Christopher PEREZ](https://github.com/Chr1stopherPerez), en réponse à un brief proposé durant ma formation à [SIMPLON](https://www.simplon.co/).
 
-// 👤 Exemple d'utilisateur à typer
-const borrower = {
-  id: 123,
-  fullName: "Alice Dupont",
-  active: true,
-  borrowedBooks: [book],
-  lastBorrowed: new Date("2024-03-10")
-};
+## But du Projet
 
-// 🧠 À toi de compléter les types ci-dessous :
+L’objectif principal est de :
 
-// ✅ Paramètre : book (objet représentant un livre)
-// ✅ Retour : string
-function getBookTitle(book) {
-  return book.title;
-}
+- **Compléter** les signatures de fonctions et objets pour que **tout compile sans erreur**
+- **Créer** le type `User` via `type` ou `interface` pour deux exemples d’utilisateurs
+- **Valider** la sûreté de type en utilisant `tsc --noEmit`
 
-// ✅ Paramètre : book
-// ✅ Retour : number
-function getPageCount(book) {
-  return book.pages;
-}
 
-// ✅ Paramètre : book
-// ✅ Retour : boolean
-function isAvailable(book) {
-  return book.isAvailable;
-}
+## Fonctionnalités
 
-// ✅ Paramètre : author (objet avec name et birthYear)
-// ✅ Retour : boolean
-function isAuthorAlive(author) {
-  const currentYear = new Date().getFullYear();
-  return currentYear - author.birthYear < 100;
-}
+- **Exercice 1 – Typage à compléter :**  
+  Ajouter les annotations manquantes pour les objets `Book` et `Borrower`.
 
-// ✅ Paramètre : book
-// ✅ Retour : string[]
-function listTags(book) {
-  return book.tags;
-}
+- **Exercice 2 – Types & Interfaces :**  
+  Définir le `User` et faire compiler deux exemples (`user1`, `user2`) et leurs fonctions.
 
-// ✅ Paramètre : borrower
-// ✅ Retour : string
-function getBorrowerName(borrower) {
-  return borrower.fullName;
-}
+- **Compilation TS :**  
+  Vérifier l’absence d’erreur avec la commande `tsc --noEmit`.
 
-// ✅ Paramètre : borrower
-// ✅ Retour : boolean
-function hasBorrowedBooks(borrower) {
-  return borrower.borrowedBooks.length > 0;
-}
+## Technologies Utilisées
 
-// ✅ Paramètre : borrower
-// ✅ Retour : Date
-function getLastBorrowedDate(borrower) {
-  return borrower.lastBorrowed;
-}
-
-// ✅ Paramètre : borrower
-// ✅ Retour : objet contenant id et nombre de livres
-// ✅ Exemple attendu : { id: 123, totalBooks: 1 }
-function getBorrowerSummary(borrower) {
-  return {
-    id: borrower.id,
-    totalBooks: borrower.borrowedBooks.length
-  };
-}
-
-// ✅ Paramètre : borrower
-// ✅ Retour : tableau des titres de ses livres (string[])
-function getBorrowedTitles(borrower) {
-  return borrower.borrowedBooks.map(book => book.title);
-}
-```
-
-# 🧩 Exercice 2 – Crée les types/interfaces
-
-```ts
-// 👉 Résultat attendu : le code compile si tu crées bien les types 
-
-const user1: User = {
-  id: 1,
-  username: "devadrien",
-  role: "admin",
-  profile: {
-    bio: "Développeur fullstack",
-    website: "https://adrien.dev"
-  }
-};
-
-const user2: User = {
-  id: 2,
-  username: "bobthetester",
-  role: "user"
-};
-
-// ✅ Fonction : accepte un User, ne retourne rien
-function printUserRole(user: User) {
-  console.log(`${user.username} a le rôle ${user.role}`);
-}
-
-// ✅ Fonction : retourne true si l'utilisateur a un profil
-function hasProfile(user: User) {
-  return "profile" in user;
-}
-```
-
-🎯 Consignes générales
-Ton objectif est de faire en sorte que TypeScript accepte tout le code sans erreur.
-Les erreurs doivent disparaître uniquement grâce à tes définitions de types et interfaces. 
+![Techs](https://skillicons.dev/icons?i=ts)
