@@ -28,13 +28,11 @@ interface Author {
     birthYear: number
 }
 
-type Tag = string[]
-
 interface Book {
     title: string,
     author: Author,
     isAvailable: boolean,
-    tags: Tag,
+    tags: string[],
     rating: number,
     pages: number
 }
@@ -76,7 +74,7 @@ function isAuthorAlive(author: Author): boolean {
 
 // ✅ Paramètre : book
 // ✅ Retour : string[]
-function listTags(book: Book): Tag {
+function listTags(book: Book): string[] {
     return book.tags;
 }
 
